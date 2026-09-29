@@ -147,6 +147,85 @@ body, button, select { font-family: inherit; }
 }
 
 </style>
+  <style>
+.tab-short { display: none; }
+.cards-layout { flex: 1; width: min(1130px, 100%); margin: 0 auto; padding: 48px 30px 70px; }
+.cards-heading h1 { color: #982032; font-size: clamp(30px, 4vw, 46px); line-height: 1.24; letter-spacing: -.025em; margin: 12px 0; }
+.cards-heading p { max-width: 780px; color: #776a68; line-height: 1.6; font-size: 16px; margin: 0 0 27px; }
+.card-filters { display: flex; gap: 10px; margin-bottom: 22px; }
+.card-filter { border: 1.5px solid #dec8bc; border-radius: 10px; background: #fffdfb; color: #6c5352; min-height: 47px; padding: 10px 17px; font-size: 15px; font-weight: 750; }
+.card-filter:hover { border-color: #b34250; }
+.card-filter.active { color: #fff; background: #a71327; border-color: #a71327; }
+.card-filter span { margin-left: 6px; opacity: .75; }
+.card-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 17px; }
+.reference-card { background: #fff; border: 1px solid #eaded5; border-top: 4px solid #dba746; border-radius: 14px; box-shadow: 0 8px 23px #5e2b220a; padding: 22px 24px; min-width: 0; }
+.reference-card.challenge { border-top-color: #b13b4b; }
+.reference-card-header { display: flex; align-items: flex-start; gap: 13px; margin-bottom: 16px; }
+.reference-card-icon { display: grid; place-items: center; width: 49px; height: 49px; flex: 0 0 49px; border-radius: 11px; background: #fff3dd; font-size: 26px; }
+.reference-card.challenge .reference-card-icon { background: #fff0f1; }
+.reference-card-title { min-width: 0; flex: 1; }
+.reference-card-title small { display: block; color: #aa7772; font-weight: 750; font-size: 12px; margin-bottom: 5px; }
+.reference-card-title h2 { color: #392f30; font-size: 21px; line-height: 1.35; margin: 0; }
+.reference-card-category { display: inline-block; background: #f7eee9; border-radius: 99px; color: #8e4d50; font-size: 12px; font-weight: 700; padding: 6px 10px; white-space: nowrap; }
+.reference-card h3 { font-size: 13px; color: #a71327; margin: 18px 0 6px; letter-spacing: .05em; text-transform: uppercase; }
+.reference-card p { color: #4e4141; font-size: 15px; line-height: 1.6; margin: 0; }
+.reference-card .card-effect { font-size: 16px; font-weight: 700; color: #352c2c; }
+.reference-card .card-meaning { color: #756769; }
+@media (max-width: 700px) {
+  .section-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .section-tab { white-space: nowrap; font-size: 14px; width: 100%; }
+  .tab-long { display: none; }
+  .tab-short { display: inline; }
+  .cards-layout { padding: 30px 17px 45px; }
+  .cards-heading p { font-size: 15px; }
+  .card-grid { grid-template-columns: 1fr; gap: 13px; }
+  .reference-card { padding: 19px 18px; }
+  .reference-card-title h2 { font-size: 19px; }
+  .reference-card-category { font-size: 11px; }
+  .card-filter { font-size: 14px; padding: 9px 12px; }
+}
+
+</style>
+  <style>
+.rules-layout { flex: 1; width: min(1130px, 100%); margin: 0 auto; padding: 48px 30px 72px; }
+.rules-heading h1 { color: #982032; font-size: clamp(30px, 4vw, 46px); line-height: 1.2; letter-spacing: -.025em; margin: 12px 0; }
+.rules-heading p { max-width: 760px; color: #776a68; font-size: 17px; line-height: 1.6; margin: 0; }
+.rules-facts { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0 30px; }
+.rules-facts span { display: inline-flex; align-items: center; border: 1px solid #e8d8cb; border-radius: 99px; padding: 9px 15px; background: #fffdfb; color: #853a42; font-weight: 750; }
+.rules-stack { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-items: start; }
+.rules-panel { min-width: 0; background: #fff; border: 1px solid #eaded5; border-radius: 16px; box-shadow: 0 8px 23px #5e2b220a; padding: 24px 26px; }
+.rules-panel h2 { display: flex; align-items: center; gap: 12px; color: #542c35; font-size: 21px; line-height: 1.35; margin: 0 0 15px; }
+.rules-panel h2 span { display: grid; place-items: center; flex: 0 0 40px; height: 40px; border-radius: 10px; color: #a71327; background: #fff0e9; font-size: 14px; font-weight: 850; }
+.rules-panel p, .rules-panel li { color: #514444; line-height: 1.68; font-size: 15.5px; }
+.rules-panel p { margin: 0 0 12px; }
+.rules-panel p:last-child { margin-bottom: 0; }
+.rules-panel ol { padding-left: 22px; margin: 0 0 10px; }
+.rules-panel li + li { margin-top: 9px; }
+.rules-roles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: 12px; }
+.rules-roles > div { padding: 16px; border: 1px solid #efded3; background: #fffaf4; border-radius: 12px; }
+.rules-roles h3 { margin: 0 0 8px; font-size: 17px; color: #982032; }
+.rules-roles p { margin: 0; }
+.rules-table-wrap { overflow-x: auto; }
+.rules-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.rules-table th, .rules-table td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #eee4dc; }
+.rules-table thead th { background: #a71327; color: #fff; white-space: nowrap; }
+.rules-table tbody tr:nth-child(even) { background: #fff9f4; }
+.rules-table tbody th { color: #a71327; width: 54px; }
+.rules-link-button { border: 0; border-radius: 10px; background: #a71327; color: #fff; padding: 12px 17px; font: inherit; font-weight: 750; cursor: pointer; margin-top: 8px; }
+.rules-link-button:hover { background: #821020; }
+@media (max-width: 850px) { .rules-stack { grid-template-columns: 1fr; } }
+@media (max-width: 700px) {
+  .rules-layout { padding: 30px 17px 48px; }
+  .rules-heading p { font-size: 15px; }
+  .rules-facts { margin: 20px 0 24px; }
+  .rules-facts span { font-size: 13px; padding: 8px 11px; }
+  .rules-panel { padding: 20px 17px; }
+  .rules-panel h2 { font-size: 19px; }
+  .rules-panel p, .rules-panel li { font-size: 15px; }
+  .rules-roles { grid-template-columns: 1fr; }
+}
+
+</style>
 </head>
 <body>
   <div class="app-shell">
@@ -156,8 +235,10 @@ body, button, select { font-family: inherit; }
       <div class="topbar-right">16 ĐỊA PHƯƠNG <span aria-hidden="true">✦</span> 320 CÂU HỎI</div>
     </header>
     <nav class="section-tabs" aria-label="Các mục của webapp">
-      <button type="button" id="quiz-tab" class="section-tab active" aria-current="page">Câu hỏi trắc nghiệm</button>
-      <button type="button" id="routes-tab" class="section-tab">Phụ lục khoảng cách</button>
+      <button type="button" id="quiz-tab" class="section-tab active" aria-current="page"><span class="tab-long">Câu hỏi trắc nghiệm</span><span class="tab-short">Câu hỏi</span></button>
+      <button type="button" id="routes-tab" class="section-tab"><span class="tab-long">Phụ lục khoảng cách</span><span class="tab-short">Khoảng cách</span></button>
+      <button type="button" id="cards-tab" class="section-tab"><span class="tab-long">Thẻ Cơ hội – Thách thức</span><span class="tab-short">Bộ thẻ</span></button>
+      <button type="button" id="rules-tab" class="section-tab">Luật chơi</button>
     </nav>
     <main class="layout" id="quiz-main">
       <aside class="province-panel" aria-label="Chọn địa phương">
@@ -202,6 +283,87 @@ body, button, select { font-family: inherit; }
         <p id="route-note" class="route-note" hidden></p>
       </div>
       <p class="routes-disclaimer">Khoảng cách là số liệu ước tính trong phụ lục trò chơi, dùng để tham khảo khi chọn tuyến. “Số nút” là giá trị áp dụng cho bàn chơi.</p>
+    </main>
+    <main id="cards-main" class="cards-layout" hidden>
+      <div class="cards-heading">
+        <span class="eyebrow">PHỤ LỤC BỘ THẺ · NỐI VÒNG TAY LỚN</span>
+        <h1>Thẻ Cơ hội &amp; Thách thức</h1>
+        <p>Tra chức năng và ý nghĩa của 28 lá thẻ khi chơi. Gieo được 5 để bốc Cơ hội, gieo được 6 để bốc Thách thức; thực hiện theo nội dung trên thẻ.</p>
+      </div>
+      <div class="card-filters" role="group" aria-label="Chọn loại thẻ">
+        <button type="button" id="opportunity-filter" class="card-filter active" aria-pressed="true">🌟 Cơ hội <span>14</span></button>
+        <button type="button" id="challenge-filter" class="card-filter" aria-pressed="false">⛈️ Thách thức <span>14</span></button>
+      </div>
+      <div id="card-grid" class="card-grid" aria-live="polite"></div>
+    </main>
+    <main id="rules-main" class="rules-layout" hidden>
+      <header class="rules-heading">
+        <span class="eyebrow">HƯỚNG DẪN · NỐI VÒNG TAY LỚN</span>
+        <h1>Luật chơi toàn bộ trò chơi</h1>
+        <p>Cùng đi qua các tỉnh thành, tích lũy vật liệu và trả lời câu hỏi để hoàn thành ba mục tiêu trước đối thủ.</p>
+        <div class="rules-facts"><span>👥 2 người chơi</span><span>⏱ 15–20 phút</span><span>🎯 3 mục tiêu mỗi người</span></div>
+      </header>
+      <div class="rules-stack">
+        <section class="rules-panel" aria-labelledby="rules-components">
+          <h2 id="rules-components"><span>01</span> Bộ trò chơi</h2>
+          <p>Bản đồ 34 tỉnh, thành phố và các tuyến nối; xúc xắc sáu mặt; quân cờ; thẻ tỉnh, thẻ mục tiêu/công trình, thẻ câu hỏi, thẻ vật liệu, thẻ Cơ hội, thẻ Thách thức; dấu cầu và cờ. Chuẩn bị một kho chung cho các bộ thẻ.</p>
+        </section>
+        <section class="rules-panel" aria-labelledby="rules-setup">
+          <h2 id="rules-setup"><span>02</span> Chuẩn bị ván chơi</h2>
+          <ol>
+            <li>Chia thẻ tỉnh theo ba miền Bắc, Trung, Nam, xáo riêng từng chồng. Mỗi người rút một thẻ ở mỗi miền để có ba tỉnh mục tiêu.</li>
+            <li>Xáo các chồng thẻ mục tiêu/công trình, câu hỏi, vật liệu, Cơ hội và Thách thức; đặt ở vị trí dễ lấy.</li>
+            <li>Cả hai gieo xúc xắc. Người được số lớn hơn chọn vai Xây cầu hoặc Cắm cờ; người còn lại nhận vai kia.</li>
+            <li>Mỗi người chọn miền xuất phát, đặt quân cờ lên bản đồ và giữ các tỉnh mục tiêu của mình.</li>
+          </ol>
+        </section>
+        <section class="rules-panel" aria-labelledby="rules-roles">
+          <h2 id="rules-roles"><span>03</span> Vai trò và đích đến</h2>
+          <div class="rules-roles">
+            <div><h3>🌉 Xây cầu</h3><p>Thu thập <strong>Tre, Đá, Sắt, Gạch</strong> theo yêu cầu trên thẻ công trình và đặt dấu cầu ở tỉnh mục tiêu khi hoàn thành.</p></div>
+            <div><h3>🚩 Cắm cờ</h3><p>Thu thập <strong>Chỉ, Vải, Sắt, Màu</strong> theo yêu cầu trên thẻ mục tiêu và đặt cờ ở tỉnh mục tiêu khi hoàn thành.</p></div>
+          </div>
+          <p>Người đầu tiên hoàn thành đủ <strong>ba tỉnh mục tiêu</strong> của mình thắng ngay.</p>
+        </section>
+        <section class="rules-panel" aria-labelledby="rules-turn">
+          <h2 id="rules-turn"><span>04</span> Lượt đi và di chuyển</h2>
+          <p>Hai người thay phiên gieo xúc xắc và đi theo các tuyến trên bản đồ. Mỗi tuyến có số nút/điểm chặng cần vượt; dùng số gieo được để xử lý việc di chuyển theo yêu cầu tại chặng đó. Nếu chưa đạt yêu cầu, quân cờ đứng tại chỗ và người chơi vẫn nhận vật liệu hoặc sự kiện ứng với mặt xúc xắc.</p>
+          <p>Tra mục <strong>Phụ lục khoảng cách</strong> để xem tỉnh nối trực tiếp, số nút cần đi và số kilômét tham khảo. Khoảng cách chỉ để đối chiếu tuyến, còn số nút là thông tin dùng trên bàn chơi. Các thẻ có thể thay đổi việc di chuyển theo đúng tác dụng ghi trên thẻ.</p>
+        </section>
+        <section class="rules-panel" aria-labelledby="rules-dice">
+          <h2 id="rules-dice"><span>05</span> Mặt xúc xắc và phần nhận được</h2>
+          <div class="rules-table-wrap"><table class="rules-table">
+            <thead><tr><th scope="col">Mặt</th><th scope="col">Đội Xây cầu</th><th scope="col">Đội Cắm cờ</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">1</th><td>1 thẻ Tre</td><td>1 thẻ Chỉ</td></tr>
+              <tr><th scope="row">2</th><td>1 thẻ Đá</td><td>1 thẻ Vải</td></tr>
+              <tr><th scope="row">3</th><td>1 thẻ Sắt</td><td>1 thẻ Sắt</td></tr>
+              <tr><th scope="row">4</th><td>1 thẻ Gạch</td><td>1 thẻ Màu</td></tr>
+              <tr><th scope="row">5</th><td>Rút 1 thẻ Cơ hội</td><td>Rút 1 thẻ Cơ hội</td></tr>
+              <tr><th scope="row">6</th><td>Rút 1 thẻ Thách thức</td><td>Rút 1 thẻ Thách thức</td></tr>
+            </tbody>
+          </table></div>
+        </section>
+        <section class="rules-panel" aria-labelledby="rules-goal">
+          <h2 id="rules-goal"><span>06</span> Hoàn thành một mục tiêu</h2>
+          <ol>
+            <li>Đưa quân cờ đến đúng tỉnh trên thẻ mục tiêu và có đủ loại, số lượng vật liệu mà thẻ yêu cầu.</li>
+            <li>Đối thủ đọc một câu hỏi về địa lý hoặc văn hóa liên quan đến tỉnh đó. Người đến tỉnh chọn đáp án.</li>
+            <li>Trả lời đúng: hoàn thành mục tiêu và đặt dấu cầu hoặc cờ theo vai trò. Trả lời sai: chưa hoàn thành, chờ lượt sau để thử lại.</li>
+          </ol>
+          <p>Tiếp tục hành trình đến hai tỉnh mục tiêu còn lại. Người hoàn thành cả ba trước tiên thắng ván.</p>
+        </section>
+        <section class="rules-panel" aria-labelledby="rules-special">
+          <h2 id="rules-special"><span>07</span> Thẻ Cơ hội và Thách thức</h2>
+          <p>Hai bộ có <strong>14 thẻ mỗi loại</strong>. Khi gieo được 5 hoặc 6, rút thẻ tương ứng và làm theo chức năng ghi trên thẻ. Thẻ có thể hỗ trợ vật liệu, di chuyển, phòng vệ hoặc tạo tình huống tương tác. Nếu có thẻ hóa giải, áp dụng theo đúng nội dung của thẻ đó.</p>
+          <button type="button" id="rules-to-cards" class="rules-link-button">Xem toàn bộ 28 thẻ <span aria-hidden="true">→</span></button>
+        </section>
+        <section class="rules-panel" aria-labelledby="rules-notes">
+          <h2 id="rules-notes"><span>08</span> Cách dùng webapp khi chơi</h2>
+          <p>Ở mục <strong>Câu hỏi trắc nghiệm</strong>, chọn tỉnh đích và cho người chơi trả lời một câu trong ba đáp án; thông báo đúng hoặc sai sẽ xuất hiện ngay sau khi chọn. Mỗi tỉnh trong danh mục hiện có 20 câu, thứ tự được xáo cho lượt mới.</p>
+          <p>Bản đồ phụ lục bao gồm 34 tỉnh, thành phố; kho câu hỏi điện tử hiện bao gồm 16 địa phương. Với các tỉnh chưa có trong danh mục câu hỏi, dùng bộ thẻ câu hỏi vật lý của trò chơi. Khi có tranh luận về một đáp án, đối chiếu đáp án trên thẻ hoặc trong kho câu hỏi trước khi ghi nhận mục tiêu.</p>
+        </section>
+      </div>
     </main>
     <footer class="site-footer">DỰ ÁN NỐI VÒNG TAY LỚN <span>·</span> KHÁM PHÁ VIỆT NAM QUA TRÒ CHƠI</footer>
   </div>
@@ -581,6 +743,42 @@ const ROUTES = {
 
 const ROUTE_PROVINCES = Object.keys(ROUTES);
 
+// Nội dung 28 thẻ do nhóm dự án cung cấp.
+const CARD_SETS = {
+  opportunity: [
+    ['Lá Toàn Năng','🌟','Đột phá','Thay thế cho 01 loại vật liệu bất kỳ mà đội bạn đang thiếu.','Tháo gỡ bế tắc: Giúp người chơi đẩy nhanh tiến độ khi thiếu hụt một tài nguyên cục bộ.'],
+    ['Thần Tốc','✈️','Di chuyển','Tiến tối đa 3 nút hoặc đến trạm kế tiếp không cần gieo đúng xúc xắc.','Bứt tốc di chuyển: Vượt qua các điểm chặng khó mà không phải phụ thuộc vào yếu tố may rủi của mặt xúc xắc.'],
+    ['Thánh Gióng','🎋','Lợi thế phe','Đội Xây cầu: Nhận 2 Thẻ Tre. Đội Cắm cờ: Miễn trừ 1 lần trả lời câu hỏi.','Cá nhân hóa vai trò: Tạo lợi thế đặc thù riêng biệt cho sự bất đối xứng giữa phe Xây cầu và Cắm cờ, lồng ghép văn hóa truyền thống.'],
+    ['Phù Sa Màu Mỡ','🌱','Tài nguyên','Nhận ngay 2 vật liệu tự chọn tương ứng với hệ vật liệu của phe mình.','Tích lũy tài nguyên: Phản ánh đặc trưng địa lý nông nghiệp, giúp bù đắp nhanh lượng vật liệu cần thiết.'],
+    ['Cầu Nối Bắc - Nam','🔄','Tương tác','Hoán đổi vị trí quân cờ hiện tại với đối thủ trên bản đồ.','Đảo lộn chiến thuật: Tạo sự bất ngờ và tăng tính đối kháng, tận dụng vị trí tốt của đối thủ trên bản đồ 34 đơn vị hành chính.'],
+    ['Thuận Buồm Xuôi Gió','🎲','Lợi thế lượt','Gieo xúc xắc 2 lần và cộng dồn điểm di chuyển/nhận tài nguyên.','Tối ưu hóa lượt đi: Nhân đôi cơ hội tiến bước hoặc thu thập, đặc biệt hữu dụng ở giai đoạn chạy nước rút.'],
+    ['Bảo Hộ Di Sản','🛡️','Bảo vệ','Hóa giải hoàn toàn tác dụng của 01 thẻ Thách thức từ đối thủ.','Cân bằng tâm lý: Giúp bảo vệ thành quả, tránh cảm giác ức chế khi bị đối phương liên tục dùng thẻ khống chế.'],
+    ['Viện Trợ Đồng Đội','🤝','Tài nguyên','Lấy 1 vật liệu từ kho hoặc ép đối thủ giao 1 vật liệu thừa.','Tăng cường trao đổi: Kích thích sự tương tác trực tiếp và trao đổi vật liệu giữa hai người chơi.'],
+    ['Khai Thông Tuyến','🚦','Di chuyển','Bỏ qua yêu cầu điểm chặng tại trạm kiểm soát tiếp theo.','Vượt chướng ngại vật: Xóa bỏ rào cản điểm chặng, duy trì nhịp độ liền mạch của ván chơi (15–20 phút).'],
+    ['Bác Học Địa Lý','🦉','Kiến thức','Được đổi câu hỏi khác hoặc xem trước đáp án gợi ý tại ô mục tiêu.','Hỗ trợ kiến thức: Giảm áp lực khi người chơi gặp phải câu hỏi địa lý – văn hóa quá khó.'],
+    ['Hội Chợ Vùng Miền','🎪','Trao đổi','Đổi 1 thẻ vật liệu bất kỳ của mình lấy 2 thẻ vật liệu khác từ kho chung.','Quản lý linh hoạt: Cơ chế chuyển đổi tài nguyên thừa thành tài nguyên thiết yếu một cách sinh động.'],
+    ['Bản Đồ Chỉ Đường','🧭','Chiến thuật','Được đặt lại vị trí xuất phát hoặc chọn lại hướng rẽ trên bản đồ.','Chữa lỗi chiến thuật: Cho phép người chơi sửa sai nếu lỡ đi vào tuyến đường bất lợi trên hành trình 3 miền.'],
+    ['Hào Khí Thăng Long','🐉','Lợi thế lượt','Nhận thêm 1 lượt đi liên tiếp ngay sau khi hoàn thành lượt hiện tại.','Tạo chuỗi combo: Đưa yếu tố lịch sử vào việc tạo ra lợi thế hành động liên hoàn, áp đảo đối thủ.'],
+    ['Đoàn Kết Sức Mạnh','🫂','Đột phá','Nếu đang bị dẫn trước, nhận ngay 2 vật liệu yêu cầu của mục tiêu kế.','Cơ chế Catch-up (bắt kịp): Giúp người đang thua có cơ hội lật ngược thế cờ, đảm bảo ván game luôn kịch tính đến phút chót.']
+  ],
+  challenge: [
+    ['Thời Tiết','⛈️','Khống chế','Đối thủ bị giữ chân tại chỗ, mất 01 lượt di chuyển kế tiếp.','Giảm nhịp độ: Đưa yếu tố thiên nhiên thực tế vào để đóng băng hành động của đối thủ khi họ đang đi quá nhanh.'],
+    ['Sương Mù Hải Vân','🌫️','Chướng ngại','Tầm nhìn hạn chế, đối thủ phải lùi lại 2 điểm chặng.','Lùi bước: Gắn liền địa danh thực tế với cơ chế phạt lùi trên tuyến đường di chuyển, khắt khe hơn việc chỉ mất lượt.'],
+    ['Đứt Chuỗi Cung Ứng','🔗','Phá hoại','Tịch thu 01 thẻ Sắt (vật liệu dùng chung) của đối thủ về kho.','Đánh vào điểm chung: Sắt là vật liệu cả hai phe đều cần, việc tước đoạt tạo ra sự khan hiếm và tăng cạnh tranh cốt lõi.'],
+    ['Kiểm Tra Trọng Tải','⚖️','Phá hoại','Đối thủ phải nộp lại 01 loại thẻ vật liệu đang có nhiều nhất trên tay.','Chống tích trữ: Ngăn chặn đối phương gom quá nhiều một loại tài nguyên, ép họ phải tính toán sử dụng hợp lý.'],
+    ['Khảo Sát Địa Chất','🔍','Kiến thức','Trả lời sai 1 câu hỏi phụ sẽ bị tước 1 lượt gieo xúc xắc.','Thử thách phụ: Lồng ghép thêm hoạt động hỏi – đáp trực tiếp, dùng kiến thức địa lý để phạt đối phương.'],
+    ['Nắng Chói Chang','🔥','Phá hoại','Đội Cắm cờ mất 1 thẻ Màu; đội Xây cầu mất 1 thẻ Gạch.','Tấn công vật liệu đặc thù: Phản ánh đặc trưng sinh thái đồng thời làm tiêu hao trực tiếp tài nguyên quan trọng của từng phe.'],
+    ['Trạm Thu Phí BOT','🛑','Tương tác','Đối thủ phải nộp 1 thẻ vật liệu cho bạn, nếu không sẽ bị mất 1 lượt.','Hút máu tài nguyên: Mô phỏng thực tế giao thông, vừa cản bước đối phương vừa làm giàu cho chính mình.'],
+    ['Mưa Nặng Hạt','🌊','Xáo trộn','Đối thủ bị tráo 01 thẻ mục tiêu hiện tại lấy 1 thẻ mục tiêu mới.','Đảo lộn kế hoạch: Ép đối phương phải thay đổi hoàn toàn hướng di chuyển và chiến thuật gom vật liệu.'],
+    ['Gió Lớn','🌪️','Phá hoại','Đội Cắm cờ mất 1 thẻ Vải; đội Xây cầu mất 1 thẻ Tre.','Hủy hoại cục bộ: Tương tự thẻ số 6 nhưng nhắm vào nhóm vật liệu khác, đa dạng hóa các mối đe dọa.'],
+    ['Rung Rinh','🚧','Khống chế','Khóa 01 nút giao thông liền kề trong 1 vòng, ép đối thủ đi đường vòng.','Block đường (Chặn tuyến): Kích thích tư duy định vị không gian trên bản đồ, ép đối phương tìm đường đi mới qua tỉnh khác.'],
+    ['Gió Đổi Chiều','🔀','Trao đổi','Ép đối thủ đổi ngang 1 vật liệu họ cần lấy 1 vật liệu bạn không cần.','Trao đổi ép buộc: Tương tác mang tính phá hoại cao, tước đi mảnh ghép quan trọng của đối thủ và đẩy rác cho họ.'],
+    ['Mưa Dài Ngày','🐢','Chướng ngại','Lượt tới, đối thủ chỉ được đi tối đa 1 điểm chặng bất kể xúc xắc.','Khống chế xúc xắc: Vô hiệu hóa sự may mắn từ những cú đổ xúc xắc điểm cao, mô phỏng tình trạng kẹt xe ngập nước.'],
+    ['Phong Hỏa Bất Báo','❌','Khống chế','Ép đối phương vứt bỏ 01 thẻ Cơ hội đang giấu trên tay.','Phá vỡ phòng ngự: Tước đi “phao cứu sinh” hoặc những thẻ bài chiến thuật mà đối phương đang cố tình để dành.'],
+    ['Hỏi Nhanh Đáp Gọn','⏱️','Kiến thức','Nếu đối thủ không kể tên được 3 tỉnh giáp ranh trong 10 giây, mất 1 lượt.','Kiểm tra bản đồ: Khai thác tính năng học tập trực quan của bản đồ 34 đơn vị hành chính, đẩy cao trào độ kịch tính.']
+  ]
+};
+
 
 const $ = (id) => document.getElementById(id);
 const list = $('province-list');
@@ -588,23 +786,63 @@ const picker = $('province-select');
 const letters = ['A', 'B', 'C'];
 const sessions = new Map();
 let active = PROVINCES[0];
+let activeCardSet = 'opportunity';
 const routePicker = $('route-province');
 
 function showSection(section) {
-  const appendix = section === 'routes';
-  $('quiz-main').hidden = appendix;
-  $('routes-main').hidden = !appendix;
-  $('quiz-tab').classList.toggle('active', !appendix);
-  $('routes-tab').classList.toggle('active', appendix);
-  if (appendix) {
-    $('quiz-tab').removeAttribute('aria-current');
-    $('routes-tab').setAttribute('aria-current', 'page');
-  } else {
-    $('routes-tab').removeAttribute('aria-current');
-    $('quiz-tab').setAttribute('aria-current', 'page');
+  for (const name of ['quiz', 'routes', 'cards', 'rules']) {
+    const selected = section === name;
+    $(`${name}-main`).hidden = !selected;
+    $(`${name}-tab`).classList.toggle('active', selected);
+    if (selected) $(`${name}-tab`).setAttribute('aria-current', 'page');
+    else $(`${name}-tab`).removeAttribute('aria-current');
   }
-  if (appendix) renderRoutes();
+  if (section === 'routes') renderRoutes();
+  if (section === 'cards') renderCards();
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function renderCards() {
+  const grid = $('card-grid');
+  grid.replaceChildren();
+  for (const type of ['opportunity', 'challenge']) {
+    const selected = type === activeCardSet;
+    $(`${type}-filter`).classList.toggle('active', selected);
+    $(`${type}-filter`).setAttribute('aria-pressed', String(selected));
+  }
+  CARD_SETS[activeCardSet].forEach(([name, symbol, category, effect, meaning], index) => {
+    const card = document.createElement('article');
+    card.className = `reference-card ${activeCardSet}`;
+    const header = document.createElement('div');
+    header.className = 'reference-card-header';
+    const icon = document.createElement('span');
+    icon.className = 'reference-card-icon';
+    icon.setAttribute('aria-hidden', 'true');
+    icon.textContent = symbol;
+    const title = document.createElement('div');
+    title.className = 'reference-card-title';
+    const number = document.createElement('small');
+    number.textContent = `THẺ ${String(index + 1).padStart(2, '0')}`;
+    const heading = document.createElement('h2');
+    heading.textContent = name;
+    const badge = document.createElement('span');
+    badge.className = 'reference-card-category';
+    badge.textContent = category;
+    title.append(number, heading, badge);
+    header.append(icon, title);
+    const effectLabel = document.createElement('h3');
+    effectLabel.textContent = 'Chức năng';
+    const effectText = document.createElement('p');
+    effectText.className = 'card-effect';
+    effectText.textContent = effect;
+    const meaningLabel = document.createElement('h3');
+    meaningLabel.textContent = 'Ý nghĩa trong trò chơi';
+    const meaningText = document.createElement('p');
+    meaningText.className = 'card-meaning';
+    meaningText.textContent = meaning;
+    card.append(header, effectLabel, effectText, meaningLabel, meaningText);
+    grid.append(card);
+  });
 }
 
 function renderRoutes() {
@@ -757,6 +995,12 @@ routePicker.value = active;
 routePicker.addEventListener('change', renderRoutes);
 $('quiz-tab').addEventListener('click', () => showSection('quiz'));
 $('routes-tab').addEventListener('click', () => showSection('routes'));
+$('cards-tab').addEventListener('click', () => showSection('cards'));
+$('rules-tab').addEventListener('click', () => showSection('rules'));
+$('rules-to-cards').addEventListener('click', () => showSection('cards'));
+for (const type of ['opportunity', 'challenge']) {
+  $(`${type}-filter`).addEventListener('click', () => { activeCardSet = type; renderCards(); });
+}
 $('next-button').addEventListener('click', () => { sessions.get(active).index += 1; renderQuestion(); });
 $('restart-button').addEventListener('click', () => { newSession(active); renderQuestion(); });
 $('another-button').addEventListener('click', () => {
